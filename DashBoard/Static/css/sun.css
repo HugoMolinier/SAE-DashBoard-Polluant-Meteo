@@ -1,0 +1,75 @@
+@import "GraphSun.css";
+:root {
+    --colorfond: #cdd3db; /*avant #ecf2f5*/
+    --colorDessus:  #ffffff ; /*avant #36404a*/
+  }
+
+body {
+    background-color: var(--colorfond);
+    color: #000000;
+}
+
+nav {
+    background-color: #89a6e8;
+    border-bottom-color: var(--colorDessus);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+#filtre {
+    background-color: #89a6e8;
+}
+
+#courbes,.Little_case,#meteo_vent,#gauge,#word,#Alerte,#meteo,#calendar  {
+    background-color: var(--colorDessus);
+    transition: 1s;
+}
+#calendar td a{
+    color: #000;
+}
+
+.horizontal-line {
+    border-top: 2px solid #000; /* Vous pouvez ajuster l'épaisseur et la couleur de la ligne selon vos besoins */
+}
+
+#calendar td{
+    background-color: #dedede;
+}
+
+/*Notification Couleur */
+
+.NO {
+    background-color: #1879f4;
+  }
+  
+  .NO2 {
+    background-color: #78c8ff;
+  }
+  
+  .O3 {
+    background-color: #5af3aa;
+  }
+  
+  .NOXasNO2 {
+    background-color: #00aaa0;
+  }
+  
+  .PM10 {
+    background-color: #ff4876;
+  }
+  
+  .PM25 {
+    background-color: #ffa96a;
+  }
+  
+  .SO2 {
+    background-color: #ffed8f;
+  }
+  
+  .C6H6 {
+    background-color: #c818f4;
+  }
+  
+  .CO {
+    background-color: #18f4ea;
+  }

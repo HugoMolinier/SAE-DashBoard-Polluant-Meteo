@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D'airBoard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./dashboard/css/forme.css">
+    <link rel="stylesheet" type="text/css" href="./dashboard/css/night.css" id="sun_night">
+    <link rel="stylesheet" type="text/css" href="./dashboard/css/carte.css">
+
+    <!-- JS DESIGN -->
+    <script src="./dashboard/js/sun.js" defer></script>
+    <script src="./dashboard/js/menu.js" defer></script>
+    <script src="./dashboard/js/date_range.js" defer></script>
+
+
+    <!-- IMPORT Lib -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.js"></script>
+    <script src="https://naver.github.io/billboard.js/release/latest/dist/billboard.pkgd.js"></script>
+
+    <!-- Models -->
+    <script src="./dashboard/js/Model/ModelAlerte.js" defer></script>
+    <script src="./dashboard/js/Model/ModelRecolte.js" defer></script>
+    <script src="./dashboard/js/Model/ModelMeteo.js" defer></script>
+    <script src="./dashboard/js/Model/ModelGraph.js" defer></script>
+    <script src="./dashboard/js/Model/ModelCalendrier.js" defer></script>
+
+    <!-- Features-->
+    <!--GRAPH-->
+    <script src="./dashboard/js/fonction_date_format.js" defer></script>
+    <script src="./dashboard/js/filtre.js" defer></script>
+    <script src="./dashboard/js/generation_graphique.js" defer></script>
+
+    <!-- MAP-->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.0.0/ol.css">
+    <script src="./dashboard/js/carte.js" defer></script>
+    <script src="./dashboard/js/static_stations.js" defer></script>
+
+    <!-- Location -->
+    <script src="./dashboard/js/geoposition.js" defer></script>
+
+    <!-- PDF génération -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="./dashboard/js/Model/ModelPDF.js" defer></script>
+    <!--INIT-->
+    <script src="./dashboard/js/init.js" defer></script>
+
+
+</head>
+
+<body>
+    <nav>
+        <img id="menu" src="./dashboard/img/menu_night.png">
+        <div id="date">
+        </div>
+        <div id="loader">
+            <div id="loading-circle"></div>
+        </div>
+        <div id="dates_select">
+            <div id="date_menu">
+                    <input id="date_Debut" type="date">
+                    <input  id="date_Fin" type="date">
+                    <button id="Recherche_Range">Rechercher</button>
+            </div>
+
+            <div>
+                <button id="date_expert">&#8681; Avancé</button>
+                <button id="6month_button">6 mois</button>
+                <button id="3month_button">3 mois</button>
+                <button id="1month_button">1 mois</button>
+                <button id="week_button">7 Jours</button>
+                <button id="today_button">Aujourd'hui</button>
+            </div>
+        </div>
+        <img id="gear-option" src="./dashboard/img/gear_option_night.png">
+    </nav>
+    <div id="contener">
+        <div id="main">
+            <div id="courbes">
+                <div id="contener_courbes"></div>
+            </div>
+            <div id="section">
+                <div id="meteo"> <button id="bouton_precedent_region" class="button">&#8617;</button>
+                    <p id="texte_Region"></p><button id="bouton_suivant_region" class="button">&#8618;</button>
+                    <hr class="horizontal-line"><img id="image_temps"></img>
+                    <p id="temperature"></p>
+                    <p id="Date_météo_vent"></p>
+                </div>
+            </div>
+            <div id="meteo_vent"><iframe id="inlineFrameExample" title="Inline Frame Example">
+                </iframe></div>
+            <div id="gauge">
+                <div class="essuis" id="essuis1"></div>
+                <div class="essuis" id="essuis2"></div>
+            </div>
+
+            <div id="world">
+                <div id="map" class="map">
+                    <div id="popup" class="ol-popup">
+                        <div id="popup-content"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="truc">
+                <div id="nombre_Station" class="Little_case">Nombre de station de la séléction<br>
+                    <div id="nombre_TEXT_station">0</div>
+                    <p id="text_station"> Stations </p>
+                </div>
+                <div id="nombre_dépassement" class="Little_case">Nombre de dépassement de polluants<br>
+                    <div id="nombre_TEXT_Alerte">0</div>
+                    <p id="text_Alerte"> Alerte </p>
+                </div>
+                <div id="nombre_valeur" class="Little_case">Valeurs par polluant <br>
+                    <div id="nombre_TEXT_Valeur">0</div>
+                    <p id="text_Valeur"> Valeurs </p>
+                </div>
+                <div id="PDF" class="Little_case">Télécharger la page : 
+                    <button id="Bouton_pdf">Générer PDF</button>
+                </div>
+            </div>
+            <div id="Alerte" class="background">
+                <div id="caseNotifications"></div>
+            </div>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div id="filtre">
+            <h3>FILTER</h3>
+            <div>
+                <div class="checkbox-polluant">
+                    <h4>Polluant <button id="Selection" onclick="toggleCheckboxes('polluant')"></button></h4>
+                         
+                    <div>
+                        <label for="CO">
+                            <input type="checkbox" id="CO" name="CO" class="polluant" checked />
+                            CO
+                        </label>
+                    </div>
+
+                    <div>
+                        <label for="C6H6">
+                            <input type="checkbox" id="C6H6" name="C6H6" class="polluant" checked />
+                            C6H6
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="NO">
+                            <input type="checkbox" id="NO" name="NO" class="polluant" checked />
+                            NO
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="NO2">
+                            <input type="checkbox" id="NO2" name="NO2" class="polluant" checked />
+                            NO2
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="O3">
+                            <input type="checkbox" id="O3" name="O3" class="polluant" checked />
+                            O3
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="NOX as NO2">
+                            <input type="checkbox" id="NOX as NO2" name="NOX as NO2" class="polluant" checked />
+                            NOX as NO2
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="PM25">
+                            <input type="checkbox" id="PM25" name="PM2.5" class="polluant" checked />
+                            PM2.5
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="PM10">
+                            <input type="checkbox" id="PM10" name="PM10" class="polluant" checked />
+                            PM10
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="SO2">
+                            <input type="checkbox" id="SO2" name="SO2" class="polluant" checked />
+                            SO2
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <div id="filteraasq"></div>
+            <button id="RechercheUpdate"> Réactualiser la Recherche</button>
+        </div>
+    </div>
+</body>
+
+</html>

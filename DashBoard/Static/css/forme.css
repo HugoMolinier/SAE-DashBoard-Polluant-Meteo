@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    transition: 2s;
+    font-family: "Lato", sans-serif;
+}
+
+.show {
+    display: flex;
+}
+
+/*****************************
+ NAVBAR
+***********************/
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+    padding: 0.5%;
+}
+
+nav img {
+    width: 2%;
+}
+
+nav div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav div div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+@media screen and (min-width: 900px) {
+}
+
+@media screen and (max-width: 899px) {
+    #menu {
+        width: 5%;
+        order: 1;
+    }
+    #date {
+        order: 2;
+    }
+    #gear-option {
+        width: 5%;
+        order: 3;
+    }
+    #dates_select {
+        order: 4;
+    }
+    #loader {
+        order: 5;
+    }
+
+}
+
+/***************
+Main 
+****************/
+#main {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#contener {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+}
+
+#filtre {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: 0.5s;
+    overflow-x: hidden;
+    order: -99;
+    border-radius: 0% 2% 2% 0%;
+}
+
+#courbes,
+#meteo,
+.Little_case,
+#meteo_vent,
+#gauge,
+#world,
+#Alerte,
+#truc,
+#calendar,
+#meteo {
+    border-width: 1%;
+    border-radius: 5%;
+    margin: 0;
+    margin-top: 0.5%;
+}
+
+
+/****************
+Diagramme
+*****************/
+@media screen and (min-width: 900px) {
+    #courbes {
+        width: max(60%, min(60%, 100%));
+    }
+    #section {
+        width: max(15%, min(15%, 100%));
+        padding-top: 0.5%;
+
+    }
+    #meteo_vent {
+        width: max(15%, min(24%, 100%));
+        overflow: hidden;
+    }
+    #gauge {
+        width: max(15%, min(18%, 100%));
+        height: 52%;
+    }
+    #world {
+        width: max(45%, min(49%, 100%));
+        height: 52%;
+    }
+
+    .essuis {
+        height: 52%;
+    }
+
+    #truc {
+        width: max(13%, min(13%, 5%));
+        height: 52%;
+    }
+    #Alerte {
+        width: max(15%, min(18%, 100%));
+        overflow-y: auto;
+        height: 52%;
+    }
+}
+
+@media screen and (max-width: 899px) {
+    #courbes {
+        width: max(60%, min(100%, 100%));
+    }
+    #section {
+        width: max(15%, min(50%, 100%));
+        padding-top: 0.5%;
+
+    }
+    #meteo_vent {
+        width: max(15%, min(50%, 100%));
+        overflow: hidden;
+    }
+    #gauge {
+        width: max(15%, min(50%, 100%));
+        height: 52%;
+    }
+    #world {
+        width: max(45%, min(100%, 100%));
+        height: 52%;
+        order: 98;
+    }
+    .essuis {
+        height: 52%;
+    }
+    #truc {
+        width: max(13%, min(50%, 100%));
+        height: 52%;
+    }
+    #Alerte {
+        width: max(15%, min(100%, 100%));
+        overflow-y: auto;
+        height: 52%;
+        order: 99;
+    }
+}
+
+#date_menu {
+    display: none;
+    order: 99;
+}
+
+#date_menu form {
+    bottom: 0;
+}
+
+/*************************
+Météo Vent
+*************************/
+#meteo_vent {
+
+    overflow: hidden;
+    border: none;
+}
+
+#inlineFrameExample {
+    width: 98%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+}
+
+
+/*************************
+Notifications
+*************************/
+
+#caseNotifications {
+    width: 95%;
+    margin: auto;
+    /* Pour centrer horizontalement */
+}
+
+#caseNotifications p {
+    width: 91%;
+    opacity: 0.7;
+    border-radius: 10px;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+/*************************
+Cercle loading
+*************************/
+
+#loading-circle {
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid;
+    position: relative;
+    animation: spin 1s infinite linear;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/***************
+FILTRE 
+****************/
+#filtre {
+    font-size: 13px;
+}
+
+#filtre div,#RechercheUpdate {
+    margin-left: 3%;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    align-content: space-between;
+    row-gap: 10px;
+}
+
+
+
+.button,#RechercheUpdate {
+    border-radius: 15px;
+    color: white;
+    margin: auto;
+    background: #36404a;
+}
+
+#Selection{
+    border-radius: 10px;
+    padding: 3%;
+    background-color:#36404a ;
+
+}
+
+
+/*************************
+Pour la météo et petite case
+*************************/
+#meteo {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 45%;
+}
+
+/*Méteo*/
+#image_temps img {
+    width: 100%;
+
+}
+
+#image_temps {
+    width: 25%;
+    float: left;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+#texte_Region,
+#Date_météo_vent {
+    padding: 4% 0;
+    width: 70%;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+#temperature {
+    font-size: 200%;
+    float: right;
+}
+
+#choix_region {
+    width: 100%;
+}
+
+.horizontal-line {
+    padding: 1% 0;
+    border: none;
+    /* Supprime la bordure par défaut de <hr> */
+    width: 95%;
+    /* Vous pouvez ajuster la largeur de la ligne selon vos besoins */
+    margin: 1px auto;
+    /* Vous pouvez ajuster la marge autour de la ligne selon vos besoins */
+}
+
+
+/*Petite case*/
+.Little_case {
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding: 5% 2%;
+    width: 97%;
+}
+
+#text_station,
+#text_Alerte,
+#text_Valeur {
+    font-size: 24px;
+    margin: 0;
+    display: inline;
+}
+
+#nombre_TEXT_station,
+#nombre_TEXT_Alerte,
+#nombre_TEXT_Valeur {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    display: inline;
+    margin-left: 6%;
+
+}
+
+/************************
+Calendrier 
+************************/
+#calendar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    height: 54%;
+}
+
+#calendar td {
+    border-radius: 4px;
+    text-align: center;
+
+}
+
+#calendar td a {
+    text-decoration: none;
+    font-size: 95%;
+}
+
+#calendar th {
+    font-size: 85%;
+}
+
+
+#calendar h2 {
+    font-size: 90%;
+
+
+}
+
+#calendar div,
+#calendar table {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+#Bouton_pdf{
+    
+    border-radius: 20px;
+    margin: 2% 15%;
+    padding: 5% 10%;
+}
+
+
+
+

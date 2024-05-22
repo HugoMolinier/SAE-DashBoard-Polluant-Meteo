@@ -1,0 +1,95 @@
+@import "GraphNight.css";
+:root {
+    --colorfond: #16113a; /*avant #2f3740*/
+    --colorDessus:  #272953 ; /*avant #36404a*/
+    --couleurText: #fff;
+  }
+
+body {
+    background-color: var(--colorfond);
+    color: var(--couleurText);
+}
+
+nav {
+    background-color: var(--colorDessus);
+    border-bottom-color: #1f252b;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+#filtre {
+    background-color: var(--colorDessus);
+}
+
+#courbes,.Little_case,#meteo_vent,#gauge,#word,#Alerte,#meteo,#calendar  {
+    background-color: var(--colorDessus);
+    transition: 1s;
+}
+
+
+.chart {
+    color: black;
+}
+
+
+
+/******************
+Cercle loading
+*******************/
+
+#loading-circle {
+    border-color: #BEB69D;
+}
+
+#calendar td a{
+    color: #fff;
+}
+.horizontal-line {
+    border-top: 2px solid #ffffff; /* Vous pouvez ajuster l'épaisseur et la couleur de la ligne selon vos besoins */
+}
+#calendar td{
+    background-color: #394767;
+}
+
+#Bouton_pdf{
+    background-color: var(--colorfond);
+    color: #fff;
+}
+
+/*Notification Couleur */
+
+.NO {
+    background-color: #1879f4;
+  }
+  
+  .NO2 {
+    background-color: #78c8ff;
+  }
+  
+  .O3 {
+    background-color: #5af3aa;
+  }
+  
+  .NOXasNO2 {
+    background-color: #00aaa0;
+  }
+  
+  .PM10 {
+    background-color: #ff4876;
+  }
+  
+  .PM25 {
+    background-color: #ffa96a;
+  }
+  
+  .SO2 {
+    background-color: #ffed8f;
+  }
+  
+  .C6H6 {
+    background-color: #c818f4;
+  }
+  
+  .CO {
+    background-color: #18f4ea;
+  }

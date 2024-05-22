@@ -1,0 +1,155 @@
+@charset "UTF-8";
+:root {
+  --couleurLigne: #000000; /*avant #2f3740*/
+  --couleurTexte:  #000000 ; /*avant #36404a*/
+  --couleurIntEssuis: #89a6e8;
+  --couleurLigneEssuisBorder:#000000;
+}
+
+/*! Modifier et trié
+ * Copyright (c) 2017 ~ present NAVER Corp.
+ * billboard.js project is licensed under the MIT license
+ *
+ * billboard.js, JavaScript chart library
+ * https://naver.github.io/billboard.js/
+ *
+ * @version 3.11.3
+ */
+/*-- Insight Theme --*/
+/*-- Default color pattern --*/
+.bb-color-pattern {
+  background-image: url("#7ea9fa;#ffcd1e;#d33043;#41c464;#c86b74;#006bc2;#2a7e41;#f27c00;#c159ff;#bed017;"); }
+
+/*-- Chart --*/
+.bb svg {
+  font-size: 12px;
+  font-family: -apple-system, "system-ui", "Noto Sans", "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  line-height: 1; }
+
+.bb path, .bb line {
+  fill: none;
+  stroke: #cecece; }
+
+.bb text, .bb .bb-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  fill: var(--couleurTexte);
+  font-size: 10.5px; }
+
+/*-- Line --*/
+.bb-line {
+  stroke-width: 1px; }/*taille des lignes des graphs*/
+
+/*-- Point --*/
+.bb-circle._expanded_ {
+  stroke-width: 2px; /* taille point hover */ }
+
+ 
+/*-- Tooltip --*/
+.bb-tooltip-container {
+  z-index: 10;
+  font-family: -apple-system, "system-ui", "Noto Sans", "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+  user-select: none; }
+
+.bb-tooltip {
+  border-collapse: separate;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #999;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #404244;
+  text-align: left;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0.9; }
+  .bb-tooltip th {
+    font-size: 11px;
+    padding: 3px 6px 0 6px;
+    text-align: left; }
+  .bb-tooltip td {
+    padding: 3px; }
+    .bb-tooltip td:first-child {
+      padding-left: 7px; }
+    .bb-tooltip td:last-child {
+      padding-right: 8px; }
+    .bb-tooltip td > span, .bb-tooltip td > svg {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 6px;
+      border-radius: 5px;
+      vertical-align: middle; }
+    .bb-tooltip td.value {
+      border-left: 1px solid transparent;
+      text-align: right; }
+  .bb-tooltip .bb-tooltip-title {
+    display: inline-block;
+    color: #aaa;
+    line-height: 20px; }
+  .bb-tooltip .bb-tooltip-detail table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+  .bb-tooltip .bb-tooltip-detail .bb-tooltip-name, .bb-tooltip .bb-tooltip-detail .bb-tooltip-value {
+    font-size: 11px;
+    line-height: 13px;
+    padding: 4px 0 3px;
+    color: #444;
+    text-align: left;
+    font-weight: normal; }
+  .bb-tooltip .bb-tooltip-detail .bb-tooltip-value {
+    padding-left: 5px;
+    font-weight: 800;
+    font-size: 12px; }
+
+
+/*-- Arc --*/
+.bb-chart-arcs-title {
+  dominant-baseline: middle;
+  font-size: 1.3em; }
+
+text.bb-chart-arcs-gauge-title {
+  dominant-baseline: middle;
+  font-size: 2.7em; }
+
+.bb-chart-arcs {
+  /*-- Polar --*/ }
+  .bb-chart-arcs .bb-chart-arcs-background {
+    fill: var(--couleurIntEssuis);
+    stroke: var(--couleurLigneEssuisBorder); }
+  .bb-chart-arcs .bb-chart-arcs-gauge-unit {
+    fill: #000;
+    font-size: 16px; }
+  .bb-chart-arcs .bb-chart-arcs-gauge-min, .bb-chart-arcs .bb-chart-arcs-gauge-max {
+    visibility: hidden; }
+  .bb-chart-arcs .bb-chart-arcs-title {
+    font-size: 1.8em;
+    fill: #000;
+    font-weight: 600; }
+  .bb-chart-arcs path.empty {
+    fill: #cecece;
+    stroke-width: 0; }
+  .bb-chart-arcs .bb-levels circle {
+    fill: none;
+    stroke: #cecece;
+    stroke-width: .5px; }
+  .bb-chart-arcs .bb-levels text {
+    fill: #848282; }
+
+.bb-chart-arc .bb-gauge-value {
+  fill: var(--couleurTexte); }
+
+.bb-chart-arc path {
+  stroke: var(--couleurLigne); 
+}
+
+.bb-chart-arc rect {
+  stroke-width: 1; }
+
+.bb-chart-arc text {
+  fill: #fff;
+  font-size: 11px; }
+
+
