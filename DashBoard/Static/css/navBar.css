@@ -1,0 +1,111 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #4b5563 1px solid;
+  padding: 12px 16px;
+  position: relative;
+}
+
+nav .icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.leftNav {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  align-items: center;
+  gap: 24px;
+}
+
+#logoFull {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#logoFull img {
+  width: 32px;
+  height: 32px;
+}
+
+.date-filters {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.date-range button {
+  background-color: var(--couleurPrimary);
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.date-filter-buttons {
+  display: flex;
+  background-color: var(--colorfond);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#filtre {
+  background-color: var(--colorDessus);
+}
+#date {
+  padding: 4px 8px;
+}
+#dates_select {
+  position: absolute; /* positionné par rapport à la navbar */
+  left: 50%; /* milieu horizontal */
+  transform: translateX(-50%); /* centre exact */
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 5; /* au-dessus des autres éléments */
+}
+
+.date-filter-buttons button {
+  background-color: var(--couleurSubElement);
+  border: none;
+  padding: 8px 14px;
+  color: var(--couleurText);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.date-filter-buttons button:hover {
+  background-color: #4b5563;
+}
+
+.date-filter-buttons button.active {
+  background-color: var(--couleurPrimary);
+}
+
+/* Pop-up date menu */
+#date_menu {
+  position: absolute;
+  top: 100%; /* juste sous les boutons */
+  left: -5px; /* aligné à gauche */
+  display: none;
+  background-color: var(--colorDessus);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  gap: 8px;
+}
+#menu,
+#gear-option {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+#date_menu input,
+#date_menu button {
+  margin: 2px;
+}

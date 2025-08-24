@@ -1,0 +1,113 @@
+#image_region {
+  width: 24px;
+  height: 24px;
+}
+#meteo_region {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: auto;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+#section {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+#meteo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+#image_option {
+  width: 24px;
+  cursor: pointer;
+  height: 24px;
+}
+
+#temperature_section {
+  display: flex;
+  font-size: 32px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+#image_temps {
+  width: 50px;
+  height: 50px;
+}
+
+#calendar {
+  width: 100%; /* occupe toute la largeur */
+  border: #272e3a solid 1px !important; /* fond visible */
+  border-radius: 8px; /* coins arrondis */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* inclut padding dans la largeur */
+}
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  align-items: center;
+}
+
+#nextMonth,
+#prevMonth {
+  background: transparent; /* fond transparent */
+  border: none; /* supprime la bordure */
+  color: white; /* texte blanc */
+  font-size: 16px; /* ajuste la taille si nécessaire */
+  cursor: pointer; /* curseur pointeur */
+  padding: 0; /* supprime le padding par défaut */
+  margin: 0 4px; /* petit écart horizontal */
+}
+#nextMonth:hover,
+#prevMonth:hover {
+  text-decoration: underline; /* optionnel : effet au survol */
+}
+
+.day-link.active {
+  background-color: #2664eb; /* couleur de fond pour la date sélectionnée */
+  color: #fff; /* texte blanc */
+  border-radius: 4px;
+  font-weight: bold;
+}
+.day-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 10px;
+  border-radius: 100%; /* rend la case circulaire */
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+}
+th {
+  font-size: 12px;
+}
+
+#inlineFrameExample {
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  border: none;
+}

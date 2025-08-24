@@ -1,0 +1,11 @@
+#filtre-icon {
+  width: 18px;
+  height: 18px;
+}
+
+#filtre_title {
+  display: flex;
+  gap: 8px;
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
