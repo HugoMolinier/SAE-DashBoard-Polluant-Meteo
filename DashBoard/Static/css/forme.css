@@ -128,7 +128,7 @@ Diagramme
   }
 
   #truc {
-    width: max(13%, min(13%, 5%));
+    width: max(13%, min(13%, 100%));
     max-height: 51%;
   }
   #Alerte {
@@ -158,11 +158,9 @@ Diagramme
     height: 52%;
   }
   #Alerte {
-    width: max(5%, min(5%, 8%));
+    flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;
-    height: 52%;
-    order: 99;
+    max-height: 51%;
   }
 }
 
